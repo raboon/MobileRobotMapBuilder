@@ -1,0 +1,19 @@
+<launch>
+
+<!-- start stage node -->
+	<node pkg="stage" type="stageros" name="stageros" args="$(find AIS_worlds)/LBH.world">
+ <remap from="base_scan" to="laserscan"/>
+	</node>
+
+<!-- start map server -->
+ <node pkg="map_server" type="map_server" name="map_server" args="$(find AIS_worlds)/LBH.yaml"/>
+
+<!-- start rviz -->
+ <node pkg="rviz" type="rviz" name="rviz" args="--display-config $(find wallfollower)/amcl_cfg.vcg">
+ </node>
+
+<!-- start wallfollower node -->
+	<node pkg="wallfollower" type="wallfollower" name="wallfollower">
+	</node>
+
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+
+<!-- start roomba driver node -->
+	<node pkg="roomrider_driver" type="roomrider_driver" output="screen" name="roomrider" >
+	</node>
+
+<!-- start laser driver node -->
+	<node pkg="sicks300" type="sick300_driver" output="screen" name="sick300" >
+	</node>
+
+<!-- start wallfollower node -->
+	<node pkg="wallfollower" type="wallfollower" output="screen" name="wallfollower" >
+	</node>
+
+</launch>

@@ -1,0 +1,13 @@
+<launch>
+
+<!-- start stage node -->
+	<node pkg="stage" type="stageros" output="screen" name="stageros" args="$(find AIS_worlds)/LBH.world">
+ <remap from="base_scan" to="laserscan"/>
+	</node>
+
+
+<!-- start some_better_name node -->
+	<node pkg="LABSS13_kawsar" type="Braitenberg" output="screen" name="Just_a_Text" >
+	</node>
+
+</launch>

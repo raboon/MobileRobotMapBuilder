@@ -1,0 +1,17 @@
+<launch>
+
+<!-- start stage node -->
+	<node pkg="stage" type="stageros" name="stageros" args="$(find AIS_worlds)/LBH.world">
+ <remap from="base_scan" to="laserscan"/>
+	</node>
+
+
+
+
+
+
+<!-- start wallfollower node -->
+	<node pkg="LABSS13_kawsar" type="Braitenberg" output="screen" name="wallfollower">
+	</node>
+
+</launch>
